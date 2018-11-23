@@ -1,0 +1,8 @@
+cd C:\java\practice\notepad
+
+Конект к серверу
+java -cp C:/java/practice/notepad/hsqldb//lib/hsqldb.jar org.hsqldb.server.Server --database.0 file:mydb --dbname.0 xdb
+
+Включить менеджер
+java -cp C:/java/practice/notepad/hsqldb/lib/hsqldb.jar org.hsqldb.util.DatabaseManagerSwing
+Соединение: NoteDB, Server, подписать: jdbc:hsqldb:hsql://localhost/xdb

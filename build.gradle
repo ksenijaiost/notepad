@@ -1,0 +1,38 @@
+group 'ru.ksu'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.akhikhl.gretty:gretty:+'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'org.akhikhl.gretty'
+apply plugin: 'war'
+
+gretty {
+    servletContainer = "jetty9"
+    scanInterval=1
+    recompileOnSourceChange = true
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compile ( group: 'org.hsqldb', name: 'hsqldb', version: '2.3.4')
+    compile('javax.servlet:javax.servlet-api:3.1.0')
+    /*
+    <groupId>javax.servlet</groupId>
+    <artifactId>jstl</artifactId>
+    <version>"whatever version you need"</version>
+    <scope>runtime</scope>
+     */
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
